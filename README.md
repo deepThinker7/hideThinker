@@ -1,2 +1,2 @@
 # hideThinker
-hide users in blogs list and forums in thecage.co.il 
+hide users in the blog list and the forum in thecage.co.il 
