@@ -1,9 +1,10 @@
 // ==UserScript== 
-// @name Hide motherfuckers
+// @name hideThinker
 // @namespace deepThinker 
 // @description Hide users in Kluv 
-// @include http://www.thecage.co.il/* 
+// @include https://thecage.co.il/*
 // @require http://code.jquery.com/jquery-3.3.1.js
+// @version 0.0.1.20190111171002
 // ==/UserScript==
 
 let hiddenUsers = window.hiddenUsers;
@@ -13,11 +14,11 @@ $(document).ready(() => {
     initHideUserButton();
     hiddenUsers.forEach(user => {
         // Blog in front page 
-        $('.frontpage_box_small_item:contains()').hide();
+        $(`.frontpage_box_small_item:contains(${user})`).hide();
         // Comment
-        $('article:contains()').hide();
+        //$(`article:contains(${user})`).hide();
         // User in usersList 
-        $('td span.user:contains("מגן מסך")').hide(); 
+        $(`td span.user:contains(${user})`).hide();
     });
 });
 
