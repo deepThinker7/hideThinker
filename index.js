@@ -42,7 +42,6 @@ getHiddenUsersList = () => {
 }
 
 initHideUserButton = () => {
-    console.log('initing hideUserBtn');
     // Remove the btn if any before drawing 
     $('.hideUserBtn').remove();
 
