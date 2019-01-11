@@ -16,7 +16,7 @@ $(document).ready(() => {
         // Blog in front page 
         $(`.frontpage_box_small_item:contains(${user})`).hide();
         // Comment
-        //$(`article:contains(${user})`).hide();
+        $(`article:contains(${user})`).hide();
         // User in usersList 
         $(`td span.user:contains(${user})`).hide();
     });
