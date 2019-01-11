@@ -11,7 +11,7 @@ let hiddenUsers = window.hiddenUsers;
 $(document).ready(() => {
     hiddenUsers = getHiddenUsersList() || [];
     // Only if within profile page 
-    initHideUserButton();
+    window.location.href.includes('profile') && initHideUserButton();
     hiddenUsers.forEach(user => {
         // Blog in front page 
         $(`.frontpage_box_small_item:contains(${user})`).hide();
