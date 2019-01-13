@@ -22,7 +22,7 @@ $(document).ready(() => {
     });
 });
 
-const toggleUser = () => {
+toggleUser = () => {
     const selectedUser = $('.profile-username > span').text();
     if (hiddenUsers.includes(selectedUser)) {
         hiddenUsers = hiddenUsers.filter(user => user !== selectedUser);
@@ -33,7 +33,7 @@ const toggleUser = () => {
     initHideUserButton();
 }
 
-const getHiddenUsersList = () => {
+getHiddenUsersList = () => {
     const users = localStorage.getItem('hiddenUsers');
     if (users) {
         return JSON.parse(users);
@@ -42,7 +42,7 @@ const getHiddenUsersList = () => {
     }
 }
 
-const initHideUserButton = () => {
+initHideUserButton = () => {
     // Remove the btn if any before drawing 
     $('.hideUserBtn').remove();
     const username = $('.profile-username > span').text();
