@@ -22,7 +22,7 @@ $(document).ready(() => {
     });
 });
 
-toggleUser = () => {
+const toggleUser = () => {
     const selectedUser = $('.profile-username > span').text();
     if (hiddenUsers.includes(selectedUser)) {
         hiddenUsers = hiddenUsers.filter(user => user !== selectedUser);
@@ -33,23 +33,20 @@ toggleUser = () => {
     initHideUserButton();
 }
 
-getHiddenUsersList = () => {
+const getHiddenUsersList = () => {
     const users = localStorage.getItem('hiddenUsers');
     if (users) {
-        return JSON.parse(users)
+        return JSON.parse(users);
     } else {
         localStorage.setItem('hiddenUsers', JSON.stringify([]));
     }
 }
 
-initHideUserButton = () => {
+const initHideUserButton = () => {
     // Remove the btn if any before drawing 
     $('.hideUserBtn').remove();
-
-    // Check if in profile page? 
     const username = $('.profile-username > span').text();
     const btnText = hiddenUsers.includes(username) ? 'הצג יוזר' : 'הסתר יוזר';
-
     $('.profileActionButtons').append(`
         <div class="col-md-3 col-sm-6 profileActionButtonsColumn hideUserBtn">
             <button class="btn btn-info btn-block" role="button" onClick="toggleUser()">
